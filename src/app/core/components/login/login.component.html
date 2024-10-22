@@ -1,0 +1,66 @@
+<div class="content">
+  <div class="wrapper" [class.active]="isActive" [class]="wrapperClass">
+    <span class="bg-animate"></span>
+    <span class="bg-animate2"></span>
+
+    <div class="form-box login">
+        <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+        <form [formGroup]="fg" action="#">
+            <div class="input-box animation" style="--i:1;  --j:22;">
+              <span class="p-float-label">
+                <input pInputText class="p-inputtext-sm" formControlName="username" required/>
+                <label for="username" class="pb-4">Username</label>
+              </span>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box animation" style="--i:2;  --j:23;">
+              <span class="p-float-label">
+                <input pInputText class="p-inputtext-sm" type="password" formControlName="password" required>
+                <label for="password" class="pb-4">Password</label>
+              </span>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            @if (fg.valid) {
+              <button class="btn animation" style="--i:3;  --j:24;" (click)="login()">Login</button>
+            } @else {
+              <button class="btn animation" style="--i:3;  --j:24;" [disabled]="true">Login</button>
+            }
+
+            <div class="logreg-link animation" style="--i:4;  --j:25;">
+                <!-- <p>Don't have an account? <b (click)="toggleActive()" class="register-link">Sign Up</b></p> -->
+                <p>Don't have an account? <a routerLink="/restorepassword" class="register-link">Sign Up</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="info-text login">
+        <!-- <h2 class="animation" style="--i:0; --j:20;">Welcome Back to Einstein!</h2> -->
+        <!-- <p class="animation" style="--i:1; --j:21;">Lorem ipsum, dolor sit amet consectetur adipisicing.</p> -->
+        <div class="animation" style="--i:1; --j:21;">
+          <img src="https://i.imgur.com/c4iCxH0.png" alt="Logo" width="200px" height="100px">
+        </div>
+    </div>
+
+    <div class="form-box register">
+        <h2 class="animation" style="--i:17; --j:0;">Restore Password</h2>
+        <form [formGroup]="fg" action="#">
+            <div class="input-box animation" style="--i:18; --j:1;">
+                <input type="text" required>
+                <label>Email</label>
+                <i class="bx bxs-envelope"></i>
+            </div>
+            <button class="btn animation"  style="--i:18; --j:2;">Recuest</button>
+            <div class="logreg-link animation"  style="--i:19;">
+              <p>Don't have an account? <a routerLink="/login" class="register-link">Sign Up login</a></p>
+              <!-- <p>Don't have an account? <b (click)="toggleActive()" class="register-link">Login</b></p> -->
+            </div>
+        </form>
+    </div>
+    <div class="info-text register">
+        <!-- <h2 class="animation" style="--i:19; --j:3;">Welcome Back to Einstein!</h2> -->
+        <!-- <p class="animation" style="--i:20; --j:4;">Lorem ipsum, dolor sit amet consectetur adipisicing.</p> -->
+        <div class="animation" style="--i:20; --j:4;">
+          <!-- <img src="https://i.imgur.com/c4iCxH0.png" alt="Logo" width="200px" height="100px"> -->
+        </div>
+    </div>
+  </div>
+</div>

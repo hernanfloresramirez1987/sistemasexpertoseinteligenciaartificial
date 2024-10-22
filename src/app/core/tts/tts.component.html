@@ -1,0 +1,14 @@
+<div>
+    <h1>Texto a Voz</h1>
+    <div class="flex flex-column gap-2">
+        <label for="username">De Texto a Voz con lenguaje natural</label>
+        <input 
+            pInputText 
+            aria-describedby="username-help" 
+            [ngModel]="text" />
+        <small id="username-help">
+            Por favor introduzca el texto que se desea convertir a texto
+        </small>
+    </div>
+    <p-button (click)="convertText()">Convertir a Voz</p-button>
+</div>
